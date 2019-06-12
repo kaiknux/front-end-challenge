@@ -11,9 +11,16 @@ class Panel extends Component {
     async componentDidMount() {
         let res = await axios.get('https://api.myjson.com/bins/pzrnx');
         let data = await res.data;
-        console.table(data);
-        this.setState({ cards: data.cards })
-        console.log(this.state)
+        const newArray = [...data.cards];
+                                                    console.log('Informação Original:');
+                                                    console.log(data.cards);
+        function func (a, b)  {  
+            return 0.5 - Math.random();
+          }  
+        const asss = newArray.sort(func);
+                                                    console.log('Informação Embaralhada:');
+                                                    console.log(asss);
+        this.setState({cards: asss})
     }
 
     render() {
@@ -21,7 +28,7 @@ class Panel extends Component {
         let cards = <p>Something went wrong.</p>
         if (!this.state.error) {
             cards = this.state.cards.map(
-                card => { return <div> {card.name}</div> }
+                card => { return <div> <p>{card.name}</p></div> }
             );
         }
         return (
