@@ -1,19 +1,30 @@
 import React, { Component } from 'react';
 import classes from './panel.css';
-
+import axios from 'axios';
 class Panel extends Component {
-state = {
-    card: {
+    state = {
+        cards: [],
         check: false,
     }
-};
+
+
+    async componentDidMount() {
+        let res = await axios.get('https://api.myjson.com/bins/pzrnx');
+        let data = await res.data;
+        console.table(data);
+        this.setState({ cards: data.cards })
+        console.log(this.state)
+    }
 
     render() {
-        let cards = <p>Cards still not recognized!</p>;
-        if (this.state.card.check) {
-            cards = <div className={classes.TarotCard}></div>
+
+        let cards = <p>Something went wrong.</p>
+        if (!this.state.error) {
+            cards = this.state.cards.map(
+                card => { return <div> {card.name}</div> }
+            );
         }
-        return(
+        return (
             <div>
                 {cards}
             </div>
