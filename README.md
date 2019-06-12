@@ -1,3 +1,7 @@
+#Challenge taken!
+
+> Postarei parte do planejamento assim que trouxer uma concepção boa do app.
+
 # front-end-challenge
 
 > Desafio para os futuros front-end's do [@Personare](https://github.com/Personare)
