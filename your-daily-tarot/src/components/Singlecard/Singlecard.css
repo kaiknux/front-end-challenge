@@ -1,0 +1,10 @@
+.Container {
+
+    display: block;
+    margin: 5px -5px;
+    cursor: pointer;
+}
+
+.Container img {
+    width: 40px;
+}

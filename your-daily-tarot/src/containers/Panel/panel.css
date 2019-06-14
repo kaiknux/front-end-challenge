@@ -1,0 +1,24 @@
+.AppContainer {
+    display: flex;
+    flex-direction: row;
+    width: 800px;
+    flex-wrap: wrap;
+    margin: auto;
+    margin-top: 50px;
+}
+
+
+.AppFooter {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: 400px;
+    width: 100%;
+    background-image: url("../../assets/images/tarot.JPG");
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #f1f1f1;
+    color: white;
+    text-align: center;
+  }
+  
