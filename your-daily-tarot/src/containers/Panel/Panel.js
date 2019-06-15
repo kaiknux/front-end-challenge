@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import classes from './panel.css';
+import classes from './Panel.css';
 import axios from 'axios';
 import Singlecard from '../../components/Singlecard/Singlecard';
 import SinglePickedCard from '../../components/SinglePickedCard/SinglePickedCard'
@@ -66,10 +66,14 @@ class Panel extends Component {
                 card => { return <Singlecard clickable={this.state.clickable} clicked={() => this.selectedCardHandler(card)} name={card.name} image={card.image} urlbackimage={this.state.urlbackimage} urlimage={this.state.urlimage} /> }
             );
         }
-        let pickedCards = this.state.addedTarots.map(
-            card => { return <SinglePickedCard name={card.name} image={card.image} />}
-        )
 
+        let pickedCards = <p>Something went wrong.</p>
+        if (!this.state.error) {
+            pickedCards = this.state.addedTarots.map(
+                card => { return <SinglePickedCard name={card.name} image={card.image} urlbackimage={this.state.urlbackimage} urlimage={this.state.urlimage} /> }
+            );
+        }
+        
         return (
             <div>
                 <div className={classes.AppContainer}>
@@ -80,7 +84,7 @@ class Panel extends Component {
                     {pickedCards}
                 </div>
             </div>
-        );
+        )
     }
 
 }

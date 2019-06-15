@@ -20,7 +20,7 @@ class Singlecard extends Component {
             }
         return (
             <div className={classes.Container}>
-                {card};
+                {card}
             </div>
         );
     }

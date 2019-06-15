@@ -1,5 +1,6 @@
 .SPCContainer {
-    width: 250px;
-    height: 300px;
+    width: 200px;
+    height: 90%;
+    margin: 15px 10px;
     background-color: rgba(0,0,0, 0.3);
 }
